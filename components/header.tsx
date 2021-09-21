@@ -1,7 +1,22 @@
 import Button from "@material-tailwind/react/Button";
 import Icon from "@material-tailwind/react/Icon";
+import { getAuth, signOut } from "firebase/auth";
+import { useRouter } from "next/router";
 import React from "react";
 export default function Header() {
+  const router = useRouter();
+  function signOutUser() {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+        router.push("/login");
+      })
+      .catch((error) => {
+        // An error happened.
+        alert(error);
+      });
+  }
   return (
     <div className="sticky top-0 z-50 flex items-center px-4 py-2 shadow-md bg-white">
       <Button
@@ -24,6 +39,7 @@ export default function Header() {
           type="text"
         />
       </div>
+      <Button onClick={signOutUser}>Sign Out</Button>
       <Button
         color="gray"
         buttonType="outline"

@@ -88,10 +88,10 @@ export default function Login() {
 
                 <div className="text-sm">
                   <a
-                    href="#"
+                    href="/signup"
                     className="font-medium text-indigo-600 hover:text-indigo-500"
                   >
-                    Forgot your password?
+                    Don't have an account? Sign up
                   </a>
                 </div>
               </div>
