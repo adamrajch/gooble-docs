@@ -38,7 +38,7 @@ export default function DocumentRow({
         block={false}
         ripple="light"
       >
-        <DropdownLink href={`docs/${id}`} ripple="light">
+        <DropdownLink href={`doc/${id}`} ripple="light">
           Edit
         </DropdownLink>
         <DropdownItem color="lightBlue" ripple="light" onClick={deleteDocument}>
