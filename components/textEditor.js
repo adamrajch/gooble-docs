@@ -12,12 +12,9 @@ const Editor = dynamic(
     ssr: false,
   }
 );
-export default function TextEditor({
-  docID,
-  user,
-  pageDoc,
-}: any): ReactElement {
-  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+export default function TextEditor({ docID, user, pageDoc }) {
+  const [editorState, setEditorState] =
+    useState < any > EditorState.createEmpty();
   const router = useRouter();
 
   useEffect(() => {
