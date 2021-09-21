@@ -13,8 +13,7 @@ const Editor = dynamic(
   }
 );
 export default function TextEditor({ docID, user, pageDoc }) {
-  const [editorState, setEditorState] =
-    useState < any > EditorState.createEmpty();
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
   const router = useRouter();
 
   useEffect(() => {
