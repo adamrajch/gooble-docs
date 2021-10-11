@@ -22,10 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <link
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-          rel="stylesheet"
-        />
+        <link rel="shortcut icon" href="/homer.png" />
       </Head>
 
       <AuthContextProvider>
