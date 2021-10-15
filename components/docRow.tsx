@@ -1,11 +1,9 @@
-import Dropdown from "@material-tailwind/react/Dropdown";
-import DropdownItem from "@material-tailwind/react/DropdownItem";
-import DropdownLink from "@material-tailwind/react/DropdownLink";
-import Icon from "@material-tailwind/react/Icon";
+import { DocumentTextIcon } from "@heroicons/react/solid";
 import { deleteDoc, doc } from "firebase/firestore";
 import { useRouter } from "next/router";
 import React, { ReactElement } from "react";
 import { db } from "../firebase/clientApp";
+import DropDown from "./dropDown";
 export default function DocumentRow({
   date,
   fileName,
@@ -23,15 +21,15 @@ export default function DocumentRow({
         onClick={() => router.push(`/doc/${id}`)}
         className="flex items-center flex-grow"
       >
-        <Icon name="article" size="3xl" color="blue" />
+        <DocumentTextIcon className="h-7 w-7 text-blue-500" />
         <p className="flex-grow pl-5 w-10 pr-10 truncate">{fileName}</p>
         <p className="pr-5 text-sm">{date?.toDate().toLocaleDateString()}</p>
       </div>
-
+      {/* 
       <Dropdown
         color="lightBlue"
         placement="bottom-start"
-        buttonText="Actions"
+        buttonText=""
         buttonType="outline"
         size="sm"
         rounded={false}
@@ -44,7 +42,8 @@ export default function DocumentRow({
         <DropdownItem color="lightBlue" ripple="light" onClick={deleteDocument}>
           Delete
         </DropdownItem>
-      </Dropdown>
+      </Dropdown> */}
+      <DropDown id={id} deleteDocument={deleteDocument} />
     </div>
   );
 }

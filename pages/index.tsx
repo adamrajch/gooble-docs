@@ -1,5 +1,4 @@
-import Button from "@material-tailwind/react/Button";
-import Icon from "@material-tailwind/react/Icon";
+import { FolderOpenIcon } from "@heroicons/react/solid";
 import { collection, onSnapshot, query } from "firebase/firestore";
 import Head from "next/head";
 import Image from "next/image";
@@ -59,16 +58,6 @@ export default function Home() {
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center justify-between py-6">
                 <h2 className="text-gray-700 text-lg">Start a new document</h2>
-
-                <Button
-                  color="gray"
-                  buttonType="outline"
-                  iconOnly={true}
-                  ripple="dark"
-                  className="border-0"
-                >
-                  <Icon name="more_vert" size="3xl" />
-                </Button>
               </div>
               <div>
                 <div
@@ -88,7 +77,7 @@ export default function Home() {
               <div className="flex items-center justify-between pb-5">
                 <h2 className="font-medium  flex-grow">My Documents</h2>
                 <p className="mr-12">Date Created</p>
-                <Icon name="folder" size="3xl" color="gray" />
+                <FolderOpenIcon className="h-7 w-7 text-gray-500" />
               </div>
 
               {goobleDocs.map((doc) => (
